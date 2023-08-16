@@ -1,8 +1,37 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: bisque;
 }
 
 a {
   color: #00B7FF;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.category, .add-category {
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: large;
+}
+
+.category {
+  background-color: #00b7ff81;
+  color: rgb(2, 2, 164);
+}
+
+.add-category {
+  background-color: darkgrey;
+  margin-top: 2rem;
+}
+
+.category:hover, .add-category:hover {
+  transform: scale(0.9);
+  transition: ease-in-out, 1s;
 }
