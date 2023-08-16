@@ -10,4 +10,8 @@ const InstrumentSchema = new Schema({
     stock: { type: Number, required: true },
 });
 
+InstrumentSchema.virtual('url').get(function () {
+    return `/catalog/instrument/${this._id}`;
+})
+
 module.exports = mongoose.model("Instruments", InstrumentSchema);

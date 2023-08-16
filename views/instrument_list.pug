@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+    h1= title
+
+    h3 Category: #{category.name}
+
+    p #{category.description}
+
+    hr
+    p
+        a(href=category.url+'/update') Update category 
+
+    p
+        a(href=category.url+'/delete') Delete this category
+
+    ul 
+        each instrument in instrument_list 
+            div(class='instrument')
+                a(href=instrument.url) #{instrument.name}
+                p Description: #{instrument.description}
+                p Price: £#{instrument.price}
+                p In stock: #{instrument.stock}
+
+        else
+            There are no instruments related to this category.
