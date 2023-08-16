@@ -7,9 +7,9 @@ block content
 
   div(class='categories')
     each category in category_list
-      button(type='button' class='category' onclick=category.url) #{category.name}
+      a(href=category.url class='category') #{category.name}
 
     else 
       p There are no categories.
 
-  button(type='button' class='add-category' /*onclick='category/add_category' */) Add new category
+  a(href='catalog/category/add_category' class='add-category') Add new category

@@ -6,6 +6,8 @@ body {
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .categories {
@@ -17,6 +19,7 @@ a {
 .category, .add-category {
   color: white;
   border-radius: 5px;
+  border: 1px solid black;
   padding: 0.5rem 1rem;
   font-size: large;
 }
@@ -34,4 +37,11 @@ a {
 .category:hover, .add-category:hover {
   transform: scale(0.9);
   transition: ease-in-out, 1s;
+}
+
+.instrument {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: medium;
+  padding: 10px;
 }
