@@ -14,14 +14,9 @@ mongoose.set('strictQuery', false);
 
 require('dotenv').config();
 
-const user = process.env.USER;
-const password = process.env.PASSWORD;
-const collection = process.env.COLLECTION;
+const mongoDB = process.env.MONGODB;
 
-const mongoDB = 
-  `mongodb+srv://${user}:${password}@cluster0.hehynx3.mongodb.net/${collection}?retryWrites=true&w=majority`
-
-mainModule().catch((err) => console.log(err));
+main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect(mongoDB);
