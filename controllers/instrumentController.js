@@ -168,3 +168,27 @@ exports.instrument_update_post = [
         }
     }),
 ];
+
+exports.instrument_delete_get = asyncHandler(async (req, res, next) => {
+    const instrument = await Instrument.findById(req.params.id).exec();
+
+    if (instrument === null) {
+        res.redirect('/catalog');
+    }
+
+    res.render('instrument_delete', {
+        title: 'Delete ' + instrument.name,
+        instrument: instrument,
+    });
+});
+
+exports.instrument_delete_post = asyncHandler(async (req, res, next) => {
+    const instrument = await Instrument.findById(req.params.id).exec();
+
+    if (instrument === null) {
+        res.redirect('/catalog');
+    }
+
+    await Instrument.findByIdAndRemove(req.body.id);
+    res.redirect('/catalog');
+});

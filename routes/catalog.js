@@ -28,4 +28,8 @@ router.get('/instrument/:id/update', instrument_controller.instrument_update_get
 
 router.post('/instrument/:id/update', instrument_controller.instrument_update_post);
 
+router.get('/instrument/:id/delete', instrument_controller.instrument_delete_get);
+
+router.post('/instrument/:id/delete', instrument_controller.instrument_delete_post);
+
 module.exports = router;
