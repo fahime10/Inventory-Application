@@ -10,6 +10,14 @@ a {
   display: inline-block;
 }
 
+input, select {
+  padding: 0.5rem 1rem;
+}
+
+select {
+  width: 20%;
+}
+
 .categories {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -32,7 +40,7 @@ a {
 }
 
 .options, .forms button {
-  background-color: snow;
+  background-color: rgba(153, 205, 50, 0.685);
   color: black;
   margin: 0.5rem;
 }

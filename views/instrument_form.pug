@@ -1,0 +1,57 @@
+extends layout 
+
+block content 
+    h1= title
+
+    form(method='POST' action='')
+        div(class='forms')
+            label(for='name') Instrument name:
+            input(type='text'
+                placeholder='Name of the instrument'
+                name='name'
+                value=(undefined===instruments ? '' : instrument.name)
+                required='true')
+            br
+            label(for='description') Description:
+            textarea(name='description'
+                rows='10'
+                cols='30'
+                value=(undefined===instruments ? '' : instrument.description)
+                required='true')
+            br
+            label(for='category') Category: 
+            select(type='select'
+                placeholder='Select category'
+                name='category'
+                required='true')
+                    - categories.sort()
+
+                    for category in categories 
+                        if instrument 
+                            option(value=category._id selected=
+                            (category._id.toString()===instrument.category._id.toString() ?
+                                'selected' : false)) #{category.name}
+                        else 
+                            option(value=category._id) #{category.name}
+            br
+            label(for='price') Price: £
+            input(type='number'
+                placeholder='Price'
+                name='price'
+                value=(undefined===instruments ? '' : instrument.price)
+                required='true')
+            br
+            label(for='stock') Stock:
+            input(type='number'
+                placeholder='Current amount in stock'
+                name='stock'
+                value=(undefined===instruments ? '' : instrument.stock)
+                required='true')
+            br
+        button(type='submit' class='add-instrument') Submit
+        a(href='/catalog' class='options') Back to homepage
+
+    if errors 
+        ul 
+            for error in errors
+                li!= error.msg
