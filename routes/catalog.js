@@ -20,4 +20,8 @@ router.post('/category/:id/delete', category_controller.category_delete_post);
 
 router.get('/category/:id', instrument_controller.instrument_list);
 
+router.get('/instrument/add', instrument_controller.instrument_create_get);
+
+router.post('/instrument/add', instrument_controller.instrument_create_post);
+
 module.exports = router;
