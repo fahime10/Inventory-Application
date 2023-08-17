@@ -16,7 +16,7 @@ exports.instrument_list = asyncHandler(async (req, res, next) => {
     }
 
     res.render('instrument_list', {
-        title: `List of instruments - ` + category.name,
+        title: `List of instruments`,
         category: category,
         instrument_list: intrumentsInCategory,
     });

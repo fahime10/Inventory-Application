@@ -9,18 +9,29 @@ block content
 
     hr
     p
-        a(href=category.url+'/update') Update category 
+        a(href=category.url+'/update' class='options') Update #{category.name} category 
 
     p
-        a(href=category.url+'/delete') Delete this category
+        a(href=category.url+'/delete' class='options') Delete #{category.name} from categories
 
-    ul 
-        each instrument in instrument_list 
-            div(class='instrument')
-                a(href=instrument.url) #{instrument.name}
-                p Description: #{instrument.description}
-                p Price: £#{instrument.price}
-                p In stock: #{instrument.stock}
+    p 
+        a(href='/' class='options') Back to homepage
 
-        else
-            There are no instruments related to this category.
+    each instrument in instrument_list 
+        div(class='instrument')
+            h3 #{instrument.name}
+            p Description: #{instrument.description}
+            p Price: £#{instrument.price}
+            p In stock: #{instrument.stock}
+
+            hr
+            p 
+                a(href=instrument.url+'/update' class='options') Update information about #{instrument.name}
+            p 
+                a(href=instrument.url+'/delete' class='options') Delete #{instrument.name}
+
+    else
+        p There are no instruments related to this category.
+
+    p 
+        a(href='/' class='options') Back to homepage

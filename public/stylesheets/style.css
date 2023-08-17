@@ -16,12 +16,12 @@ a {
   gap: 1rem;
 }
 
-.category, .add-category {
+.category, .add-category, .add-instrument, .options {
   color: white;
   border-radius: 5px;
   border: 1px solid black;
   padding: 0.5rem 1rem;
-  font-size: large;
+  font-size: medium;
 }
 
 .category {
@@ -29,13 +29,22 @@ a {
   color: rgb(2, 2, 164);
 }
 
-.add-category {
+.options {
+  background-color: snow;
+  color: black;
+}
+
+.add-category, .add-instrument {
   background-color: darkgrey;
   margin-top: 2rem;
 }
 
-.category:hover, .add-category:hover {
-  transform: scale(0.9);
+.add-instrument {
+  margin-left: 5rem;
+}
+
+.category:hover, .add-category:hover, .add-instrument:hover {
+  transform: scale(0.92);
   transition: ease-in-out, 1s;
 }
 
@@ -44,4 +53,5 @@ a {
   border-radius: 5px;
   font-size: medium;
   padding: 10px;
+  background-color: burlywood;
 }
