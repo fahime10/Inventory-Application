@@ -24,4 +24,8 @@ router.get('/instrument/add', instrument_controller.instrument_create_get);
 
 router.post('/instrument/add', instrument_controller.instrument_create_post);
 
+router.get('/instrument/:id/update', instrument_controller.instrument_update_get);
+
+router.post('/instrument/:id/update', instrument_controller.instrument_update_post);
+
 module.exports = router;
