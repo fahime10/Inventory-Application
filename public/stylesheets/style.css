@@ -16,12 +16,14 @@ a {
   gap: 1rem;
 }
 
-.category, .add-category, .add-instrument, .options {
+.category, .add-category, .add-instrument, .options, .forms button {
   color: white;
   border-radius: 5px;
   border: 1px solid black;
   padding: 0.5rem 1rem;
   font-size: medium;
+  cursor: pointer;
+  text-align: center;
 }
 
 .category {
@@ -29,9 +31,10 @@ a {
   color: rgb(2, 2, 164);
 }
 
-.options {
+.options, .forms button {
   background-color: snow;
   color: black;
+  margin: 0.5rem;
 }
 
 .add-category, .add-instrument {
@@ -54,4 +57,13 @@ a {
   font-size: medium;
   padding: 10px;
   background-color: burlywood;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
 }

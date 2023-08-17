@@ -15,7 +15,7 @@ block content
         a(href=category.url+'/delete' class='options') Delete #{category.name} from categories
 
     p 
-        a(href='/' class='options') Back to homepage
+        a(href='/catalog' class='options') Back to homepage
 
     each instrument in instrument_list 
         div(class='instrument')
@@ -34,4 +34,4 @@ block content
         p There are no instruments related to this category.
 
     p 
-        a(href='/' class='options') Back to homepage
+        a(href='/catalog' class='options') Back to homepage
