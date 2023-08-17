@@ -10,6 +10,10 @@ router.get('/category/add', category_controller.category_create_get);
 
 router.post('/category/add', category_controller.category_create_post);
 
+router.get('/category/:id/update', category_controller.category_update_get);
+
+router.post('/category/:id/update', category_controller.category_update_post);
+
 router.get('/category/:id', instrument_controller.instrument_list);
 
 module.exports = router;
