@@ -9,12 +9,14 @@ block content
             input(type='text'
                 placeholder='Category name'
                 name='name'
+                value=(undefined===category ? '' : category.name)
                 required='true')
             br
             label(for='description') Description: 
             textarea(name='description'
                 rows='10'
                 cols='10'
+                value=(undefined===category ? '' : category.description)
                 required='true') 
             br
             button(type='submit') Submit
