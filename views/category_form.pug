@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+    h1= title
+
+    form(method='POST' action='')
+        div(class='forms')
+            label(for='name') Category: 
+            input(type='text'
+                placeholder='Category name'
+                name='name'
+                required='true')
+            br
+            label(for='description') Description: 
+            textarea(name='description'
+                rows='10'
+                cols='10'
+                required='true') 
+            br
+            button(type='submit') Submit
+            a(href='/catalog' class='options') Back to homepage
+
+    if errors 
+        ul 
+            for error in errors 
+                li!= error.msg
