@@ -1,4 +1,5 @@
 const Category = require('../models/category');
+const Instrument = require('../models/instrument');
 const asyncHandler = require('express-async-handler');
 const { body, validationResult } = require('express-validator');
 
@@ -103,3 +104,39 @@ exports.category_update_post = [
             }
         }),
 ];
+
+exports.category_delete_get = asyncHandler(async (req, res, next) => {
+    const [category, allInstruments] = await Promise.all([
+        Category.findById(req.params.id).exec(),
+        Instrument.find({ category: req.params.id }, "name").exec()
+    ]);
+
+    if (category === null) {
+        req.redirect('/catalog');
+    }
+
+    res.render('category_delete', {
+        title: 'Delete ' + category.name,
+        category: category,
+        instruments : allInstruments,
+    });
+});
+
+exports.category_delete_post = asyncHandler(async (req, res, next) => {
+    const [category, allInstruments] = await Promise.all([
+        Category.findById(req.params.id).exec(),
+        Instrument.find({ category: req.params.id }, "name").exec()
+    ]);
+
+    if (allInstruments.length > 0) {
+        res.render('category_delete', {
+            title: 'Delete ' + category.name,
+            category: category,
+            instruments : allInstruments,
+        });
+        return;
+    } else {
+        await Category.findByIdAndRemove(req.params.id);
+        res.redirect('/catalog');
+    }
+});
