@@ -9,14 +9,14 @@ block content
             input(type='text'
                 placeholder='Name of the instrument'
                 name='name'
-                value=(undefined===instruments ? '' : instrument.name)
+                value=(undefined===instrument ? '' : instrument.name)
                 required='true')
             br
             label(for='description') Description:
             textarea(name='description'
                 rows='10'
                 cols='30'
-                value=(undefined===instruments ? '' : instrument.description)
+                value=(undefined===instrument ? '' : instrument.description)
                 required='true')
             br
             label(for='category') Category: 
@@ -38,14 +38,14 @@ block content
             input(type='number'
                 placeholder='Price'
                 name='price'
-                value=(undefined===instruments ? '' : instrument.price)
+                value=(undefined===instrument ? '' : instrument.price)
                 required='true')
             br
             label(for='stock') Stock:
             input(type='number'
                 placeholder='Current amount in stock'
                 name='stock'
-                value=(undefined===instruments ? '' : instrument.stock)
+                value=(undefined===instrument ? '' : instrument.stock)
                 required='true')
             br
         button(type='submit' class='add-instrument') Submit
